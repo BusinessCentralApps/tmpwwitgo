@@ -1,0 +1,27 @@
+{
+  "githubRunner": "windows-latest",
+  "githubRunnerShell": "powershell",
+  "type": "PTE",
+  "useCompilerFolder": true,
+  "incrementalBuilds": {
+    "onPush": true
+  },
+  "templateUrl": "https://github.com/businesscentralapps/tmpqcqgLv-PTE@main",
+  "doNotPublishApps": true,
+  "UseProjectDependencies": true,
+  "MicrosoftTelemetryConnectionString": "",
+  "conditionalSettings": [
+    {
+      "settings": {
+        "workflowConcurrency": [
+          "group: ${{ github.workflow }}-${{ github.ref }}",
+          "cancel-in-progress: true"
+        ]
+      },
+      "workflows": [
+        "CI/CD"
+      ]
+    }
+  ],
+  "useApproximateVersion": true
+}
